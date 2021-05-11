@@ -16,21 +16,24 @@ public class TextParser {
 		
 		try {
 			Scanner scanner = new Scanner(selectedFile);
-			Pattern pattern = Pattern.compile("\\w");
+			//Pattern pattern = Pattern.compile("[A-Za-z0-9_]");
 			char nextChar;
+			String nextWord;
+			Map<Character, Integer> map = new HashMap<>();
 			
 			
-			if(scanner.hasNext(pattern)) {
-				nextChar = scanner.next(pattern).charAt(0);
-			} else {
-				System.out.println("Pattern does not exist");
-				return null;
+			while(scanner.hasNext()) {
+				nextWord = scanner.next().toLowerCase();
+				for(int i = 0; i < nextWord.length(); i++) {
+					nextChar = nextWord.charAt(i);
+					int count = map.containsKey(nextChar) ? map.get(nextChar) : 0;
+					map.put(nextChar, count+1);
+				}
 			}
 			
 			
-			Map<Character, Integer> map = new HashMap<>();
 			
-			System.out.println(nextChar);
+			//System.out.println(next);
 			scanner.close();
 			return map;
 		}
