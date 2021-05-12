@@ -18,7 +18,7 @@ public class Histogram {
 			Map<Character, Integer> dict = TextParser.parseFile(selectedFile);
 			System.out.println(dict.toString());
 			try {
-				generateHistorgram(dict, true);
+				generateHistorgram(dict);
 			} catch (IOException e) {
 				
 				e.printStackTrace();
@@ -31,7 +31,7 @@ public class Histogram {
 
 	}
 	
-	private static void generateHistorgram(Map<Character, Integer> dict, boolean addSeparator) throws IOException {
+	private static void generateHistorgram(Map<Character, Integer> dict) throws IOException {
 		
 		File histogram = new File("D:/Desktop/INFORMATIK 2/Lab04/Histogram.txt");
 		FileWriter writer = new FileWriter("D:/Desktop/INFORMATIK 2/Lab04/Histogram.txt");
