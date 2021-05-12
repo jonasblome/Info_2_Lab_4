@@ -1,0 +1,2 @@
+How do you go about reading in characters from a file? Write and test a method that returns the next character in a file. Note that you have to do something with the carriage returns - such as ignoring them - and that you have to decide what to do when there are no characters to be returned.
+How do you write a String to a file? How do you write an Integer to a file? An int? How do you create a file, anyway?
